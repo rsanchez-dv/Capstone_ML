@@ -6,3 +6,5 @@ creds.py
 *.json
 
 *.pickle
+
+glove/
