@@ -8,3 +8,11 @@ creds.py
 *.pickle
 
 glove/
+
+CleanUpFiles/__pycache__/
+
+models/
+
+old_models/
+
+*.pkl

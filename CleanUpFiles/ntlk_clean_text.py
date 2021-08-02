@@ -5,6 +5,7 @@ from nltk.stem import WordNetLemmatizer
 
 lemmatizer = WordNetLemmatizer()
 stop_words = stopwords.words('english')
+
 email_regex = re.compile(r"[\w.-]+@[\w.-]+")
 url_regex = re.compile(r"(http|www)[^\s]+")
 date_regex = re.compile(r"[\d]{2,4}[ -/:]*[\d]{2,4}([ -/:]*[\d]{2,4})?") # a way to match date
@@ -54,10 +55,10 @@ def clean_keep_words(text):
 
 def clean_text(text):
     text = decontracted(text)
-    text = lemmatize_text(text)
     text = clean_special_patterns(text)
     text = clean_stopwords(text)
     text = clean_keep_words(text)
+    text = lemmatize_text(text)    
     tokens = [word.lower() for word in word_tokenize(text)]
     text = " ".join(tokens)
     return text
